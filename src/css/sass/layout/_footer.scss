@@ -1,6 +1,6 @@
 footer {
   padding: 40px 20px;
-  background-color: $background-odd;
+  background-color: $background;
   @extend %display-flex;
   @include flex-flow(column nowrap);
   @include align-items(center);
@@ -11,14 +11,14 @@ footer {
     @include flex-flow(row wrap);
     @include align-items(center);
     @include justify-content(center);
+
     a {
-      color: $icons-background;
+      color: $background-blue;
       cursor: pointer;
       margin: 0 5px;
       @include transition(all .5s);
-
       &:hover {
-        color: $icons-hover;
+        color: $hover;
       }
     }
   }

@@ -7,7 +7,7 @@ export class Section extends React.Component {
     constructor(props) {
         super(props);
 
-        // list of users, this should be a fetch from database
+        // list of users - this should be fetched from database
         this.state = {
             customersList: [{
                 name: "Artur",
@@ -69,7 +69,6 @@ export class Section extends React.Component {
                 <AddCustomer
                     onAddCustomerClick={this.handleAddCustomerClick}
                 />
-                <h3>Search</h3>
                 <ShowCustomers
                     customersList={this.state.customersList}
                 />

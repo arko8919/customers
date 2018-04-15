@@ -3,7 +3,7 @@ import React from 'react';
 import {OverlayButton} from './buttons/overlayButton';
 import {CloseOverlayButton} from './buttons/closeOverlayButton';
 import {Form} from './form';
-import {AddButton} from './buttons/addCustomerButton';
+import {AddCustomerButton} from './buttons/addCustomerButton';
 import {CloseAlertButton} from './buttons/closeAlertButton';
 
 export class AddCustomer extends React.Component {
@@ -67,13 +67,16 @@ export class AddCustomer extends React.Component {
             // reset form element
             document.getElementById('form').reset();
 
-            // reset states
-            this.state.name = undefined;
-            this.state.surname = undefined;
-            this.state.email = undefined;
-            this.state.phoneNumber = undefined;
-            this.state.age = undefined;
-            this.state.city = undefined;
+            // reset state form values
+            this.setState({
+                name: undefined,
+                surname: undefined,
+                email: undefined,
+                phoneNumber: undefined,
+                age: undefined,
+                city: undefined
+            });
+
         } else {
             // show alert
             this.setState({
@@ -114,7 +117,7 @@ export class AddCustomer extends React.Component {
                     <Form
                         onFormChange={this.handleFormChange}
                     />
-                    <AddButton
+                    <AddCustomerButton
                         onAddCustomerClick={this.handleAddCustomerClick}
                     />
                     <CloseOverlayButton

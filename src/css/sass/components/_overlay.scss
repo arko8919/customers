@@ -1,10 +1,12 @@
 @import '../components/alert';
 
 %overlay {
+  // hide overlay
   .hidden {
     display: none;
   }
 
+  // show overlay
   .visible {
     display: block;
   }
@@ -13,10 +15,9 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: $background-odd;
-   // left: 50%;
+    background-color: $background;
     padding: 0.3em;
-   // @include transform(translateX(-50%));
+    box-shadow: 0 0 10px $textWhite;
 
     h3 {
       color: $textWhite;
@@ -24,22 +25,35 @@
     }
 
     form {
-      @extend %display-flex;
-      @include flex-flow(column nowrap);
+
+      box-shadow: 0 0 10px $textWhite;
+      margin: auto;
+      @media only screen and (min-width: 768px) and (min-height: 468px) {
+        width: 80%;
+      }
+
       input {
+        width: 100%;
+        display: block;
         margin: .1em 0;
         padding: .2em;
       }
-
     }
+
     .close-overlay-button, .add-customer-button {
-      margin: 0 0 .2em 0;
+      display: inline-block;
+      margin-top: .3em;
       outline: none;
-      border: none;
-      width: 100%;
-      background-color: $text-odd;
+      border: 1px solid $border;
+      background-color: $light-text;
       text-transform: uppercase;
+      padding: .2em;
+      min-width: 50%;
+      font-weight: bold;
+      @include transition(.5s);
       &:hover {
+        background-color: $hover;
+        color: $light-text;
         cursor: pointer;
       }
     }

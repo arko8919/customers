@@ -24,12 +24,14 @@ export class SelectByName extends React.Component {
             if (customerList[customerListIndex].name === name &&
                 customerList[customerListIndex].city === city) {
                 sortedCustomerList.push(customerList[customerListIndex]);
-                // check if one option match and other is none
+                // check if name option match and current city option is none
             } else if (customerList[customerListIndex].name === name &&
                 city === 'none') {
                 sortedCustomerList.push(customerList[customerListIndex]);
+                // check if current name option is none and city option match
             } else if (name === 'none' && city === customerList[customerListIndex].city) {
                 sortedCustomerList.push(customerList[customerListIndex]);
+                // check if both options are set to none
             } else if (name === 'none' && city === 'none') {
                 sortedCustomerList.push(customerList[customerListIndex]);
             }

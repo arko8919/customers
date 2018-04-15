@@ -6,7 +6,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: $background-odd;
+    background-color: $background;
     opacity: .9;
 
     p {
@@ -22,13 +22,14 @@
       outline: none;
       border: none;
       margin: 0;
-      background-color: $text-odd;
+      background-color: $light-background;
       text-transform: uppercase;
       padding: .2em .5em;
+      @include transition(.5s);
       &:hover {
         cursor: pointer;
-        background-color: $alert-hover;
-        color: $text-odd;
+        background-color: $hover;
+        color: $light-text;
       }
     }
   }

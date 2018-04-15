@@ -5,15 +5,16 @@ export class Table extends React.Component {
         super(props);
 
         this.state = {
-            displayDate: undefined
+            displayRows: undefined
         }
     }
 
+    // create rows with data cells - each row represent new customer
     addRows(customerList) {
         const rows = [];
         for (let customerListIndex = 0; customerListIndex < customerList.length; customerListIndex++) {
             rows.push(
-                <tr>
+                <tr key={`row${customerListIndex}`}>
                     <td>{customerList[customerListIndex].name}</td>
                     <td>{customerList[customerListIndex].surname}</td>
                     <td>{customerList[customerListIndex].email}</td>
@@ -24,19 +25,17 @@ export class Table extends React.Component {
             )
         }
         this.setState({
-            displayDate: rows
+            displayRows: rows
         })
     }
 
     componentWillMount() {
         this.addRows(this.props.customersList);
-
     }
 
     componentWillReceiveProps(nextProps) {
         this.addRows(nextProps.customersList);
     }
-
 
     render() {
         return (
@@ -53,7 +52,7 @@ export class Table extends React.Component {
                     </tr>
                     </thead>
                     <tbody>
-                    {this.state.displayDate}
+                    {this.state.displayRows}
                     </tbody>
                 </table>
             </div>

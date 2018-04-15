@@ -19,14 +19,18 @@ export class SelectByCity extends React.Component {
         const sortedCustomerList = [];
 
         for (let customerListIndex = 0; customerListIndex < customerList.length; customerListIndex++) {
+            // check which customers selected options match
             if (customerList[customerListIndex].city === city &&
                 customerList[customerListIndex].name === name) {
                 sortedCustomerList.push(customerList[customerListIndex]);
+                // check if city option match and current name option is none
             } else if (customerList[customerListIndex].city === city &&
                 name === 'none') {
                 sortedCustomerList.push(customerList[customerListIndex]);
+                // check if current city option is none and name option match
             } else if (city === 'none' && name === customerList[customerListIndex].name) {
                 sortedCustomerList.push(customerList[customerListIndex]);
+                // check if both options are set to none
             } else if (city === 'none' && name === 'none') {
                 sortedCustomerList.push(customerList[customerListIndex]);
             }

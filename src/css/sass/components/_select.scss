@@ -1,5 +1,21 @@
 %select {
   .select {
-    text-align: center;
+    border: 1px solid $border;
+    padding: 2em;
+    box-shadow: 0 0 10px $background;
+    background-color: $light-background;
+
+    .content {
+      display: inline-block;
+      padding: .2em;
+      div {
+        text-align: center;
+        padding: .2em;
+        font-weight: bold;
+      }
+      select {
+        min-width: 8em;
+      }
+    }
   }
 }

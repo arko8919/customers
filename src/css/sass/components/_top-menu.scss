@@ -1,22 +1,21 @@
 %top-menu {
   .topMenu {
     width: 100%;
-    // height: 1em;
     position: fixed;
     top: 0;
     left: 0;
     text-align: left;
-    background-color: $top-menu;
+    background-color: $background-blue;
 
     button {
       margin: .1em;
       font-size: 2em;
       padding: 0 0.25em;
-      background-color: $top-menu;
+      background-color: $background;
+      color: $background-blue;
       &:hover {
         cursor: pointer;
       }
     }
-
   }
 }

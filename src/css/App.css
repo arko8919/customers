@@ -1,6 +1,7 @@
+/* Colors */
 /* Fonts */
 /* Fonts-size */
-header, section .customer .overlay form, section, section .container, footer, footer .icons {
+header, section, section .container, footer, footer .icons {
   display: -webkit-flex;
   display: -moz-flex;
   display: -o-flex;
@@ -8,11 +9,12 @@ header, section .customer .overlay form, section, section .container, footer, fo
   display: flex; }
 
 header {
-  padding: 2.5em .2em 1em .2em;
+  padding: 3em .2em 1em .2em;
   background-color: #222222;
   -webkit-justify-content: center;
   justify-content: center; }
   header h1 {
+    text-transform: uppercase;
     text-align: center;
     font-family: "Roboto Mono", monospace;
     color: #C7F1FF;
@@ -40,7 +42,11 @@ section .customer .overlay .alert {
     margin: 0;
     background-color: #C7F1FF;
     text-transform: uppercase;
-    padding: .2em .5em; }
+    padding: .2em .5em;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
     section .customer .overlay .alert .alert-button:hover {
       cursor: pointer;
       background-color: #616161;
@@ -59,40 +65,69 @@ section .customer .overlay {
   height: 100%;
   position: absolute;
   background-color: #222222;
-  padding: 0.3em; }
+  padding: 0.3em;
+  box-shadow: 0 0 10px #fff; }
   section .customer .overlay h3 {
     color: #fff;
     text-transform: uppercase; }
   section .customer .overlay form {
-    -webkit-flex-flow: column nowrap;
-    flex-flow: column nowrap; }
+    box-shadow: 0 0 10px #fff;
+    margin: auto; }
+    @media only screen and (min-width: 768px) and (min-height: 468px) {
+      section .customer .overlay form {
+        width: 80%; } }
     section .customer .overlay form input {
+      width: 100%;
+      display: block;
       margin: .1em 0;
       padding: .2em; }
   section .customer .overlay .close-overlay-button, section .customer .overlay .add-customer-button {
-    margin: 0 0 .2em 0;
+    display: inline-block;
+    margin-top: .3em;
     outline: none;
-    border: none;
-    width: 100%;
+    border: 1px solid #476C9B;
     background-color: #C7F1FF;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    padding: .2em;
+    min-width: 50%;
+    font-weight: bold;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
     section .customer .overlay .close-overlay-button:hover, section .customer .overlay .add-customer-button:hover {
+      background-color: #616161;
+      color: #C7F1FF;
       cursor: pointer; }
 
 section .container .select {
-  text-align: center; }
+  border: 1px solid #476C9B;
+  padding: 2em;
+  box-shadow: 0 0 10px #222222;
+  background-color: #C7F1FF; }
+  section .container .select .content {
+    display: inline-block;
+    padding: .2em; }
+    section .container .select .content div {
+      text-align: center;
+      padding: .2em;
+      font-weight: bold; }
+    section .container .select .content select {
+      min-width: 8em; }
 
 section .container .result {
   max-width: 100%;
   max-height: 12em;
   overflow-x: auto;
-  margin: 2em .2em 3em .2em; }
+  margin: 2em 1em 3em 1em;
+  box-shadow: 0 0 10px #222222; }
   section .container .result table, section .container .result th, section .container .result td {
-    border: 1px solid #476C9B;
+    border: 2px solid #476C9B;
     border-collapse: collapse;
-    text-align: center; }
-  section .container .result td {
-    padding: 0.5em; }
+    text-align: center;
+    padding: .3em .5em; }
+  section .container .result th {
+    background-color: #ADD9F4; }
 
 section .customer .topMenu {
   width: 100%;
@@ -105,11 +140,13 @@ section .customer .topMenu {
     margin: .1em;
     font-size: 2em;
     padding: 0 0.25em;
-    background-color: #ADD9F4; }
+    background-color: #222222;
+    color: #ADD9F4; }
     section .customer .topMenu button:hover {
       cursor: pointer; }
 
 section {
+  background-color: #fff;
   position: relative;
   -webkit-flex-flow: column nowrap;
   flex-flow: column nowrap;
@@ -127,6 +164,8 @@ section {
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center; }
+    section .container h2 {
+      text-transform: uppercase; }
 
 footer {
   padding: 40px 20px;
@@ -144,7 +183,7 @@ footer {
     -webkit-justify-content: center;
     justify-content: center; }
     footer .icons a {
-      color: #E31B6D;
+      color: #ADD9F4;
       cursor: pointer;
       margin: 0 5px;
       -webkit-transition: all 0.5s;
@@ -162,21 +201,22 @@ footer {
 
 body {
   font-size: 14px;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  background-color: #222222; }
   @media only screen and (min-width: 321px) and (max-height: 321px) {
     body {
-      font-size: 18px; } }
+      font-size: 16px; } }
   @media only screen and (min-width: 468px) and (min-height: 321px) {
     body {
-      font-size: 22px; } }
+      font-size: 18px; } }
   @media only screen and (min-width: 768px) and (min-height: 468px) {
     body {
-      font-size: 26px; } }
+      font-size: 20px; } }
   @media only screen and (min-width: 1224px) and (max-height: 767px) {
     body {
-      font-size: 30px; } }
+      font-size: 22px; } }
   @media only screen and (min-width: 1224px) and (min-height: 768px) {
     body {
-      font-size: 34px; } }
+      font-size: 24px; } }
 
 /*# sourceMappingURL=App.css.map */

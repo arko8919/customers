@@ -4,23 +4,19 @@
 @import '../components/top-menu';
 
 section {
+  background-color: $textWhite;
   position: relative;
   @extend %display-flex;
   @include flex-flow(column nowrap);
   @include align-items(center);
 
-  h2 {
-  }
-
   .customer {
     width: 100%;
-   // position: relative;
     text-align: center;
-    background-color: $background-odd;
+    background-color: $background;
 
     @extend %top-menu;
     @extend %overlay;
-
   }
 
   .container {
@@ -32,6 +28,9 @@ section {
 
     @extend %select;
     @extend %table;
-  }
 
+    h2 {
+      text-transform: uppercase;
+    }
+  }
 }

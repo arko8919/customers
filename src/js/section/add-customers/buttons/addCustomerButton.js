@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const AddButton = (props) => {
+export const AddCustomerButton = (props) => {
     return (
-        <button className='add-customer-button' onClick={props.onAddCustomerClick}>Add</button>
+        <button className='add-customer-button' onClick={props.onAddCustomerClick}>Add Customer</button>
     )
 };

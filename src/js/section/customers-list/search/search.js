@@ -20,13 +20,18 @@ export class Search extends React.Component {
 
     // pull out names
     displayNames(customerList) {
-        return customerList.map(customer => <option>{customer.name}</option>);
+        return customerList.map((customer, index) => {
+            index++;
+            return <option key={`name${index}`}>{customer.name}</option>;
+        })
     }
 
     // pull out cities
     displayCities(customerList) {
-        return customerList.map(customer => <option>{customer.city}</option>);
-
+        return customerList.map((customer, index) => {
+            index++;
+            return <option key={`city${index}`}>{customer.city}</option>
+        })
     }
 
     componentWillMount() {
@@ -66,25 +71,31 @@ export class Search extends React.Component {
     render() {
         return (
             <div className='select'>
-                <SelectByName
-                    customersList={this.props.customersList}
-                    onNameChange={this.handleNameChange}
-                    value={this.state.name}
-                    city={this.state.city}
-                >
-                    <option>none</option>
-                    {this.state.names}
-                </SelectByName>
+                <div className='content'>
+                    <div>Name</div>
+                    <SelectByName
+                        customersList={this.props.customersList}
+                        onNameChange={this.handleNameChange}
+                        value={this.state.name}
+                        city={this.state.city}
+                    >
+                        <option>none</option>
+                        {this.state.names}
+                    </SelectByName>
+                </div>
 
-                <SelectByCity
-                    customersList={this.props.customersList}
-                    onCityChange={this.handleCityChange}
-                    value={this.state.city}
-                    name={this.state.name}
-                >
-                    <option>none</option>
-                    {this.state.cities}
-                </SelectByCity>
+                <div className='content'>
+                    <div>City</div>
+                    <SelectByCity
+                        customersList={this.props.customersList}
+                        onCityChange={this.handleCityChange}
+                        value={this.state.city}
+                        name={this.state.name}
+                    >
+                        <option>none</option>
+                        {this.state.cities}
+                    </SelectByCity>
+                </div>
             </div>
         )
     }

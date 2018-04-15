@@ -1,6 +1,6 @@
 import React from 'react';
 // components
-import {Table} from './table';
+import {Table} from './table/table';
 import {Search} from './search/search';
 
 export class ShowCustomers extends React.Component {
@@ -37,9 +37,16 @@ export class ShowCustomers extends React.Component {
         })
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            customersList: nextProps.customersList
+        })
+    }
+
     render() {
         return (
             <div className='container'>
+                <h2>Search</h2>
                 <Search
                     customersList={this.props.customersList}
                     onNameChange={this.handleNameChange}

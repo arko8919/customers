@@ -1,0 +1,13 @@
+header {
+  padding: 2.5em .2em 1em .2em;
+  background-color: $background-odd;
+  @extend %display-flex;
+  @include justify-content(center);
+
+  h1 {
+    text-align: center;
+    font-family: $mono-font;
+    color: $text-odd;
+    font-size: 2em;
+  }
+}

@@ -1,0 +1,37 @@
+@import '../components/overlay';
+@import '../components/select';
+@import '../components/table';
+@import '../components/top-menu';
+
+section {
+  position: relative;
+  @extend %display-flex;
+  @include flex-flow(column nowrap);
+  @include align-items(center);
+
+  h2 {
+  }
+
+  .customer {
+    width: 100%;
+   // position: relative;
+    text-align: center;
+    background-color: $background-odd;
+
+    @extend %top-menu;
+    @extend %overlay;
+
+  }
+
+  .container {
+    width: 100%;
+    @extend %display-flex;
+    @include flex-flow(column nowrap);
+    @include align-items(center);
+    @include justify-content(center);
+
+    @extend %select;
+    @extend %table;
+  }
+
+}

@@ -1,0 +1,48 @@
+@import '../components/alert';
+
+%overlay {
+  .hidden {
+    display: none;
+  }
+
+  .visible {
+    display: block;
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: $background-odd;
+   // left: 50%;
+    padding: 0.3em;
+   // @include transform(translateX(-50%));
+
+    h3 {
+      color: $textWhite;
+      text-transform: uppercase;
+    }
+
+    form {
+      @extend %display-flex;
+      @include flex-flow(column nowrap);
+      input {
+        margin: .1em 0;
+        padding: .2em;
+      }
+
+    }
+    .close-overlay-button, .add-customer-button {
+      margin: 0 0 .2em 0;
+      outline: none;
+      border: none;
+      width: 100%;
+      background-color: $text-odd;
+      text-transform: uppercase;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    @extend %alert;
+  }
+}

@@ -37,7 +37,7 @@ export class NewCustomer extends React.Component {
             city: this.state.city
         };
 
-        // check if required fields are fill
+        // check if required fields are filled
         if (this.state.name !== undefined && this.state.city !== undefined) {
             // update customer base
             this.props.onAddCustomerClick(customer);

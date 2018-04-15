@@ -1,12 +1,12 @@
 @import 'warning';
 
 %popup-window {
-  // hide overlay
+  // hide popup window
   .hidden {
     display: none;
   }
 
-  // show overlay
+  // show popup window
   .visible {
     display: block;
   }
@@ -25,19 +25,23 @@
     }
 
     form {
-
       box-shadow: 0 0 10px $textWhite;
       margin: auto;
       @media only screen and (min-width: 768px) and (min-height: 468px) {
         width: 80%;
       }
-
       input {
         width: 100%;
         display: block;
         margin: .1em 0;
         padding: .2em;
       }
+    }
+
+    .new-customer {
+      display: inline;
+
+      @extend %warning;
     }
 
     .close-popup-window-button, .add-customer-button {
@@ -51,12 +55,15 @@
       min-width: 50%;
       font-weight: bold;
       @include transition(.5s);
+      @media only screen and (min-width: 768px) and (min-height: 468px) {
+        min-width: 40%;
+      }
+
       &:hover {
         background-color: $hover;
         color: $light-text;
         cursor: pointer;
       }
     }
-    @extend %warning;
   }
 }

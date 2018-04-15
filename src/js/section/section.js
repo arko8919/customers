@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {ShowCustomers} from './display-customers/display-customers';
+import {ShowCustomers} from './display-customers/displayCustomers';
 import {AddCustomer} from './add-customer/addCustomer';
 
 export class Section extends React.Component {
@@ -52,13 +52,13 @@ export class Section extends React.Component {
 
     // add new customer to customer list
     handleAddCustomerClick(newCustomer) {
-        // get current customer base
-        const list = this.state.customersList;
+        // get current customer list
+        const customerBase = this.state.customersList;
         // push new customer to customer base
-        list.push(newCustomer);
-        // update customer base with new customer
+        customerBase.push(newCustomer);
+        // update customer list with new customer base
         this.setState({
-            customersList: list
+            customersList: customerBase
         })
     }
 

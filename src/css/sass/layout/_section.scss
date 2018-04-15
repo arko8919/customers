@@ -19,7 +19,7 @@ section {
     @extend %popup-window;
   }
 
-  .container {
+  .display-costumers {
     width: 100%;
     @extend %display-flex;
     @include flex-flow(column nowrap);

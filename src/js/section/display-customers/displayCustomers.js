@@ -1,5 +1,5 @@
 import React from 'react';
-// components
+
 import {Table} from './table/table';
 import {Search} from './search/search';
 
@@ -11,7 +11,6 @@ export class ShowCustomers extends React.Component {
             customersList: undefined,
         };
 
-        // bindings
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleCityChange = this.handleCityChange.bind(this);
     }
@@ -30,7 +29,6 @@ export class ShowCustomers extends React.Component {
         });
     }
 
-    // use current customer list
     componentWillMount() {
         this.setState({
             customersList: this.props.customersList
@@ -45,7 +43,7 @@ export class ShowCustomers extends React.Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='display-costumers'>
                 <h2>Search</h2>
                 <Search
                     customersList={this.props.customersList}

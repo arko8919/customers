@@ -1,7 +1,7 @@
 /* Colors */
 /* Fonts */
 /* Fonts-size */
-header, section, section .container, footer, footer .icons {
+header, section, section .display-costumers, footer, footer .icons {
   display: -webkit-flex;
   display: -moz-flex;
   display: -o-flex;
@@ -20,7 +20,7 @@ header {
     color: #C7F1FF;
     font-size: 2em; }
 
-section .add-customer .popup-window .warning {
+section .add-customer .popup-window .new-customer .warning {
   display: none;
   width: 100%;
   height: 100%;
@@ -29,13 +29,13 @@ section .add-customer .popup-window .warning {
   left: 0;
   background-color: #222222;
   opacity: .9; }
-  section .add-customer .popup-window .warning p {
+  section .add-customer .popup-window .new-customer .warning p {
     font-weight: bold;
     margin: 4em 0 1em 0;
     color: #E31B6D;
     text-transform: uppercase;
     font-size: 1.5em; }
-  section .add-customer .popup-window .warning .warning-button {
+  section .add-customer .popup-window .new-customer .warning .warning-button {
     font-weight: bold;
     outline: none;
     border: none;
@@ -47,13 +47,13 @@ section .add-customer .popup-window .warning {
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s; }
-    section .add-customer .popup-window .warning .warning-button:hover {
+    section .add-customer .popup-window .new-customer .warning .warning-button:hover {
       cursor: pointer;
       background-color: #616161;
       color: #C7F1FF; }
-section .add-customer .popup-window .show {
+section .add-customer .popup-window .new-customer .show {
   display: block; }
-section .add-customer .popup-window .hide {
+section .add-customer .popup-window .new-customer .hide {
   display: none; }
 
 section .add-customer .hidden {
@@ -81,6 +81,8 @@ section .add-customer .popup-window {
       display: block;
       margin: .1em 0;
       padding: .2em; }
+  section .add-customer .popup-window .new-customer {
+    display: inline; }
   section .add-customer .popup-window .close-popup-window-button, section .add-customer .popup-window .add-customer-button {
     display: inline-block;
     margin-top: .3em;
@@ -95,38 +97,41 @@ section .add-customer .popup-window {
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s; }
+    @media only screen and (min-width: 768px) and (min-height: 468px) {
+      section .add-customer .popup-window .close-popup-window-button, section .add-customer .popup-window .add-customer-button {
+        min-width: 40%; } }
     section .add-customer .popup-window .close-popup-window-button:hover, section .add-customer .popup-window .add-customer-button:hover {
       background-color: #616161;
       color: #C7F1FF;
       cursor: pointer; }
 
-section .container .select {
+section .display-costumers .select {
   border: 1px solid #476C9B;
   padding: 2em;
   box-shadow: 0 0 10px #222222;
   background-color: #C7F1FF; }
-  section .container .select .content {
+  section .display-costumers .select .content {
     display: inline-block;
     padding: .2em; }
-    section .container .select .content div {
+    section .display-costumers .select .content div {
       text-align: center;
       padding: .2em;
       font-weight: bold; }
-    section .container .select .content select {
+    section .display-costumers .select .content select {
       min-width: 8em; }
 
-section .container .result {
+section .display-costumers .result {
   max-width: 100%;
   max-height: 12em;
   overflow-x: auto;
   margin: 2em 1em 3em 1em;
   box-shadow: 0 0 10px #222222; }
-  section .container .result table, section .container .result th, section .container .result td {
+  section .display-costumers .result table, section .display-costumers .result th, section .display-costumers .result td {
     border: 2px solid #476C9B;
     border-collapse: collapse;
     text-align: center;
     padding: .3em .5em; }
-  section .container .result th {
+  section .display-costumers .result th {
     background-color: #ADD9F4; }
 
 section .add-customer .top-menu {
@@ -156,7 +161,7 @@ section {
     width: 100%;
     text-align: center;
     background-color: #222222; }
-  section .container {
+  section .display-costumers {
     width: 100%;
     -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
@@ -164,7 +169,7 @@ section {
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center; }
-    section .container h2 {
+    section .display-costumers h2 {
       text-transform: uppercase; }
 
 footer {

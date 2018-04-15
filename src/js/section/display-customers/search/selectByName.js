@@ -5,7 +5,6 @@ export class SelectByName extends React.Component {
     constructor(props) {
         super(props);
 
-        // bindings
         this.handleNameChange = this.handleNameChange.bind(this);
     }
 
@@ -20,21 +19,24 @@ export class SelectByName extends React.Component {
         const sortedCustomerList = [];
 
         for (let customerListIndex = 0; customerListIndex < customerList.length; customerListIndex++) {
-            // check which customers selected options match
+            // check which selected options match
             if (customerList[customerListIndex].name === name &&
                 customerList[customerListIndex].city === city) {
                 sortedCustomerList.push(customerList[customerListIndex]);
+
                 // check if name option match and current city option is none
             } else if (customerList[customerListIndex].name === name &&
                 city === 'none') {
                 sortedCustomerList.push(customerList[customerListIndex]);
+
                 // check if current name option is none and city option match
-            } else if (name === 'none' && city === customerList[customerListIndex].city) {
+            } else if (name === 'none' &&
+                city === customerList[customerListIndex].city) {
                 sortedCustomerList.push(customerList[customerListIndex]);
+
                 // check if both options are set to none
-            } else if (name === 'none' && city === 'none') {
+            } else if (name === 'none' && city === 'none')
                 sortedCustomerList.push(customerList[customerListIndex]);
-            }
         }
         return sortedCustomerList;
     }
@@ -47,8 +49,6 @@ export class SelectByName extends React.Component {
             >
                 {this.props.children}
             </select>
-
         )
     }
-
 }

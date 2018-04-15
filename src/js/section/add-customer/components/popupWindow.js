@@ -18,7 +18,7 @@ export class PopupWindow extends React.Component {
         this.handleAddCustomerClick = this.handleAddCustomerClick.bind(this);
     }
 
-    // close overlay - button inside overlay
+    // close popup window - button inside popup window
     onClick() {
         this.setState({
             display: 'hidden'
@@ -35,6 +35,7 @@ export class PopupWindow extends React.Component {
     handleAddCustomerClick(customer) {
         this.props.onAddCustomerClick(customer);
 
+        // reset previous customer data
         this.setState({
             name: undefined,
             surname: undefined,

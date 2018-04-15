@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {SelectByName} from './selectByName';
 import {SelectByCity} from './selectByCity';
 
@@ -13,7 +14,6 @@ export class Search extends React.Component {
             city: 'none'
         };
 
-        // bindings
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleCityChange = this.handleCityChange.bind(this);
     }

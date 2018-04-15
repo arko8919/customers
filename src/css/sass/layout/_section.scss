@@ -1,4 +1,4 @@
-@import '../components/overlay';
+@import '../components/popup-window';
 @import '../components/select';
 @import '../components/table';
 @import '../components/top-menu';
@@ -10,13 +10,13 @@ section {
   @include flex-flow(column nowrap);
   @include align-items(center);
 
-  .customer {
+  .add-customer {
     width: 100%;
     text-align: center;
     background-color: $background;
 
     @extend %top-menu;
-    @extend %overlay;
+    @extend %popup-window;
   }
 
   .container {

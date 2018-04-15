@@ -1,13 +1,13 @@
 import React from 'react';
-// components
-import {ShowCustomers} from './customers-list/showCustomers';
-import {AddCustomer} from './add-customers/addCustomer';
+
+import {ShowCustomers} from './display-customers/display-customers';
+import {AddCustomer} from './add-customer/addCustomer';
 
 export class Section extends React.Component {
     constructor(props) {
         super(props);
 
-        // list of users - this should be fetched from database
+        // list of customers - this should be fetched from database
         this.state = {
             customersList: [{
                 name: "Artur",
@@ -47,17 +47,16 @@ export class Section extends React.Component {
             }],
         };
 
-        // bindings
         this.handleAddCustomerClick = this.handleAddCustomerClick.bind(this);
     }
 
     // add new customer to customer list
     handleAddCustomerClick(newCustomer) {
-        // get list
+        // get current customer base
         const list = this.state.customersList;
-        // push new customer to list
+        // push new customer to customer base
         list.push(newCustomer);
-        // update list with new customer
+        // update customer base with new customer
         this.setState({
             customersList: list
         })

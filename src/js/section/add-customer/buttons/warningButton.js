@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const CloseAlertButton = (props) => {
+export const WarningButton = props => {
     return (
         <button
-            className='alert-button'
+            className='warning-button'
             onClick={props.onAlertClick}
         >
             Close

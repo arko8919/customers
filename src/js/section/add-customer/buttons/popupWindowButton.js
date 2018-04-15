@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const OverlayButton = props => {
+export const PopupWindowButton = props => {
     return (
-        <div className='topMenu'>
+        <div className='top-menu'>
             <button onClick={props.onClick}>+</button>
         </div>
     )

@@ -4,7 +4,6 @@ export class Form extends React.Component {
     constructor(props) {
         super(props);
 
-        // bindings
         this.handleFormChange = this.handleFormChange.bind(this);
     }
 

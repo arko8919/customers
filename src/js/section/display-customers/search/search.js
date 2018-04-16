@@ -20,17 +20,27 @@ export class Search extends React.Component {
 
     // pull out names
     displayNames(customerList) {
-        return customerList.map((customer, index) => {
+        // pull out names
+        const customerNames = customerList.map(customer => customer.name);
+        // remove duplicate names
+        const uniqueCustomers = Array.from(new Set(customerNames));
+        //  create name options
+        return uniqueCustomers.map((customer, index) => {
             index++;
-            return <option key={`name${index}`}>{customer.name}</option>;
+            return <option key={`name${index}`}>{customer}</option>;
         })
     }
 
     // pull out cities
     displayCities(customerList) {
-        return customerList.map((customer, index) => {
+        // pull out cities
+        const customerNames = customerList.map(customer => customer.city);
+        // remove duplicate cities
+        const uniqueCustomers = Array.from(new Set(customerNames));
+        // create cities options
+        return uniqueCustomers.map((customer, index) => {
             index++;
-            return <option key={`city${index}`}>{customer.city}</option>
+            return <option key={`city${index}`}>{customer}</option>
         })
     }
 
@@ -43,6 +53,7 @@ export class Search extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+
         const customerList = nextProps.customersList;
         this.setState({
             names: this.displayNames(customerList),

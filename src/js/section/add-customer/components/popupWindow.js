@@ -13,16 +13,19 @@ export class PopupWindow extends React.Component {
             display: 'hidden',
         };
 
-        this.onClick = this.onClick.bind(this);
+        this.handleClosePopupWindowClick = this.handleClosePopupWindowClick.bind(this);
         this.handleFormChange = this.handleFormChange.bind(this);
         this.handleAddCustomerClick = this.handleAddCustomerClick.bind(this);
     }
 
     // close popup window - button inside popup window
-    onClick() {
+    handleClosePopupWindowClick() {
         this.setState({
             display: 'hidden'
         });
+
+        // update add customer component - this removes double click necessity after closing popup window
+       this.props.onClosePopupWindowClick('hidden');
     }
 
     handleFormChange(name, value) {
@@ -49,7 +52,7 @@ export class PopupWindow extends React.Component {
     componentWillReceiveProps(nextProps) {
         this.setState({
             display: nextProps.display
-        })
+        });
     }
 
     render() {
@@ -69,7 +72,7 @@ export class PopupWindow extends React.Component {
                     city={this.state.city}
                 />
                 <PopupWindowCloseButton
-                    onClick={this.onClick}
+                    onClick={this.handleClosePopupWindowClick}
                 />
             </div>
         )

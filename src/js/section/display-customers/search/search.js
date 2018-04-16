@@ -24,7 +24,7 @@ export class Search extends React.Component {
         const customerNames = customerList.map(customer => customer.name);
         // remove duplicate names
         const uniqueCustomers = Array.from(new Set(customerNames));
-        //  create name options
+        //  create names options
         return uniqueCustomers.map((customer, index) => {
             index++;
             return <option key={`name${index}`}>{customer}</option>;

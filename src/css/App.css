@@ -35,6 +35,8 @@ section .add-customer .popup-window .new-customer .warning {
     color: #E31B6D;
     text-transform: uppercase;
     font-size: 1.5em; }
+    section .add-customer .popup-window .new-customer .warning p span {
+      color: #fff; }
   section .add-customer .popup-window .new-customer .warning .warning-button {
     font-weight: bold;
     outline: none;

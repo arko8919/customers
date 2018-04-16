@@ -4,7 +4,7 @@ export const WarningButton = props => {
     return (
         <button
             className='warning-button'
-            onClick={props.onAlertClick}
+            onClick={props.onClick}
         >
             Close
         </button>

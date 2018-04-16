@@ -12,12 +12,19 @@ export class AddCustomer extends React.Component {
         };
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleClosePopupWindowClick = this.handleClosePopupWindowClick.bind(this);
     }
 
     // open and close popup window - top left button
     handleClick() {
         this.setState({
             display: this.state.display === 'hidden' ? 'visible' : 'hidden'
+        })
+    }
+
+    handleClosePopupWindowClick(display) {
+        this.setState({
+            display: display
         })
     }
 
@@ -29,6 +36,7 @@ export class AddCustomer extends React.Component {
                 />
                 <PopupWindow
                     display={this.state.display}
+                    onClosePopupWindowClick={this.handleClosePopupWindowClick}
                     onAddCustomerClick={this.props.onAddCustomerClick}
                 />
             </div>

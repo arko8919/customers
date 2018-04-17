@@ -56,28 +56,26 @@ export class NewCustomer extends React.Component {
             });
 
             // check required fields
-            if (this.state.name === undefined &&
-                this.state.city === undefined) {
+            if ((this.state.name === undefined &&
+                    this.state.city === undefined) ||
+                (this.state.name === undefined &&
+                    this.state.city === '') ||
+                (this.state.city === undefined &&
+                    this.state.name === '') ||
+                (this.state.name === '' &&
+                    this.state.city === '')) {
                 this.setState({
                     status: 'Name and City'
                 });
-            } else if (this.state.name === undefined) {
+            } else if (this.state.name === undefined ||
+                (this.state.name === '' &&
+                    this.state.city.length > 0)) {
                 this.setState({
                     status: 'Name'
                 });
-            } else if (this.state.city === undefined) {
-                this.setState({
-                    status: 'City'
-                });
-            } else if (this.state.name.length <= 0 && this.state.city.length <= 0) {
-                this.setState({
-                    status: 'Name and City'
-                });
-            } else if (this.state.name.length <= 0) {
-                this.setState({
-                    status: 'Name'
-                });
-            } else if (this.state.city.length <= 0) {
+            } else if (this.state.city === undefined ||
+                (this.state.city === '' &&
+                    this.state.name.length > 0)) {
                 this.setState({
                     status: 'City'
                 });

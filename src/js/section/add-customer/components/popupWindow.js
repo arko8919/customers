@@ -44,7 +44,7 @@ export class PopupWindow extends React.Component {
             surname: undefined,
             email: undefined,
             phoneNumber: undefined,
-            age: undefined,
+            age: undefined ,
             city: undefined
         });
     }

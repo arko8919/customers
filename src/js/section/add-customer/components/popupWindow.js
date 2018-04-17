@@ -25,7 +25,7 @@ export class PopupWindow extends React.Component {
         });
 
         // update add customer component - this removes double click necessity after closing popup window
-       this.props.onClosePopupWindowClick('hidden');
+        this.props.onClosePopupWindowClick('hidden');
     }
 
     handleFormChange(name, value) {
@@ -44,7 +44,7 @@ export class PopupWindow extends React.Component {
             surname: undefined,
             email: undefined,
             phoneNumber: undefined,
-            age: undefined ,
+            age: undefined,
             city: undefined
         });
     }

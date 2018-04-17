@@ -37,7 +37,7 @@ export class NewCustomer extends React.Component {
             city: this.state.city
         };
 
-        // check if required fields are filled
+        // check if required fields are fill
         if ((this.state.name !== undefined &&
                 this.state.city !== undefined) &&
             (this.state.name.length > 0 &&
@@ -49,6 +49,7 @@ export class NewCustomer extends React.Component {
             // This is not best solution when we involve directly DOM object.
             // reset form element
             document.getElementById('form').reset();
+            // if required field or fields are not fill
         } else {
             // show warning
             this.setState({
@@ -56,6 +57,7 @@ export class NewCustomer extends React.Component {
             });
 
             // check required fields
+            // if name and city input missing
             if ((this.state.name === undefined &&
                     this.state.city === undefined) ||
                 (this.state.name === undefined &&
@@ -67,12 +69,14 @@ export class NewCustomer extends React.Component {
                 this.setState({
                     status: 'Name and City'
                 });
+                // if name input missing
             } else if (this.state.name === undefined ||
                 (this.state.name === '' &&
                     this.state.city.length > 0)) {
                 this.setState({
                     status: 'Name'
                 });
+                // if city input missing
             } else if (this.state.city === undefined ||
                 (this.state.city === '' &&
                     this.state.name.length > 0)) {
